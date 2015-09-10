@@ -11,7 +11,7 @@ RUN yum -y update
 RUN yum -y install httpd
 RUN yum clean all
 
-VOLUME /var/www/html
+# VOLUME /var/www/html
 
 WORKDIR /var/www/html
 
