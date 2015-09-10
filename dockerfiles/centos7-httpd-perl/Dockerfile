@@ -22,8 +22,10 @@ RUN yum -y install perl-CGI
 RUN yum clean all
 
 # httpd perl config
-ADD perl-cgi.conf /etc/httpd/conf.d
+ADD perl-cgi.conf /etc/httpd/conf.d/perl-cgi.conf
 
 # index.cgi
-ADD index.cgi /var/www/html
-RUN chmod -v +x /var/www/html/index.cgi
+ADD index.cgi /var/www/html/index.cgi
+RUN chmod -v u+x /var/www/html/index.cgi
+RUN chmod -v g+x /var/www/html/index.cgi
+RUN chown -v apache:apache /var/www/html/index.cgi
