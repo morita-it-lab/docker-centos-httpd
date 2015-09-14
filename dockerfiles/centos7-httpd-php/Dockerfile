@@ -21,4 +21,8 @@ RUN yum -y install php-mysql
 # ----- Clean
 RUN yum clean all
 
+# httpd config
+ADD html_extend.conf /etc/httpd/conf.d/html_extend.conf
+
+# default php
 RUN echo "<?php phpinfo(); ?>" > /var/www/html/index.php

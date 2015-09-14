@@ -13,10 +13,19 @@ RUN yum -y update
 # ----- Common utilities
 RUN yum -y install vim
 RUN yum -y install unzip
+RUN yum -y install make
+
+RUN yum -y install gcc
+RUN yum -y install zlib-devel
+RUN yum -y install libxml2-devel
+RUN yum -y install libyaml-devel
+RUN yum -y install libxslt
+RUN yum -y install libxslt-devel
 
 # ----- Perl
 RUN yum -y install perl
 RUN yum -y install perl-CGI
+RUN yum -y install cpan
 
 # ----- Clean
 RUN yum clean all
